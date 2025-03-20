@@ -1,0 +1,18 @@
+/* Add Tailwind-like CSS or leave empty if using Tailwind */
+.bg-gray-100 { background-color: #f3f4f6; }
+.min-h-screen { min-height: 100vh; }
+.p-4 { padding: 1rem; }
+.max-w-6xl { max-width: 72rem; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.bg-blue-600 { background-color: #2563eb; }
+.text-white { color: white; }
+.rounded-t-lg { border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem; }
+.shadow { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+.text-2xl { font-size: 1.5rem; }
+.font-bold { font-weight: 700; }
+.text-sm { font-size: 0.875rem; }
+.bg-white { background-color: white; }
+.p-8 { padding: 2rem; }
+.rounded-lg { border-radius: 0.5rem; }
+.text-center { text-align: center; }
+.text-gray-600 { color: #4b5563; }

@@ -1,0 +1,32 @@
+<div class="bg-white p-6 rounded-b-lg shadow mb-6">
+    <div class="flex gap-2">
+      <input
+        type="text"
+        placeholder="Enter license plate number (e.g., ABC123)"
+        class="flex-1 p-2 border border-gray-300 rounded"
+        [(ngModel)]="plateNumber"
+        ngModel="plateNumber"
+        (keypress)="($event.key === 'Enter') && searchVehicle()"
+      />
+      <button 
+        (click)="searchVehicle()"
+        [disabled]="isLoading"
+        class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 disabled:bg-blue-300"
+      >
+        {{ isLoading ? 'Searching...' : 'Search' }}
+      </button>
+    </div>
+  
+    <div class="mt-4" *ngIf="searchHistory.length > 0">
+      <h3 class="text-sm font-medium text-gray-500">Recent searches:</h3>
+      <div class="flex flex-wrap gap-2 mt-1">
+        <button
+          *ngFor="let vehicle of searchHistory"
+          (click)="selectFromHistory(vehicle)"
+          class="bg-gray-200 text-xs px-2 py-1 rounded hover:bg-gray-300"
+        >
+          {{ vehicle.plateNumber }}
+        </button>
+      </div>
+    </div>
+  </div>

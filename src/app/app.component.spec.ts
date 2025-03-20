@@ -1,10 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent],
+      declarations: [AppComponent], // Use declarations instead of imports for components
+      schemas: [CUSTOM_ELEMENTS_SCHEMA], // Prevents errors from unknown elements
     }).compileComponents();
   });
 
@@ -20,7 +22,7 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('vehicle-info-app');
   });
 
-  it('should render title', () => {
+  it('should render title in an h1 tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;

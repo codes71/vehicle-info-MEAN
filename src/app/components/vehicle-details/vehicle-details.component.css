@@ -1,0 +1,54 @@
+/* Add Tailwind-like CSS or leave empty if using Tailwind */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.md\:flex-row { flex-direction: row; }
+.gap-6 { gap: 1.5rem; }
+.md\:w-1\/3 { width: 33.333%; }
+.bg-white { background-color: white; }
+.p-4 { padding: 1rem; }
+.rounded-lg { border-radius: 0.5rem; }
+.shadow { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+.mb-4 { margin-bottom: 1rem; }
+.rounded-lg { border-radius: 0.5rem; }
+.object-cover { object-fit: cover; }
+.w-full { width: 100%; }
+.h-64 { height: 16rem; }
+.border { border: 1px solid; }
+.border-gray-200 { border-color: #e5e7eb; }
+.p-3 { padding: 0.75rem; }
+.bg-gray-50 { background-color: #f9fafb; }
+.font-bold { font-weight: 700; }
+.text-xl { font-size: 1.25rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.grid { display: grid; }
+.grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.gap-2 { gap: 0.5rem; }
+.text-sm { font-size: 0.875rem; }
+.text-gray-500 { color: #6b7280; }
+.font-medium { font-weight: 500; }
+.text-green-600 { color: #16a34a; }
+.text-red-600 { color: #dc2626; }
+.md\:w-2\/3 { width: 66.666%; }
+.text-lg { font-size: 1.125rem; }
+.border-b { border-bottom: 1px solid; }
+.pb-2 { padding-bottom: 0.5rem; }
+.mb-3 { margin-bottom: 0.75rem; }
+.grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+.md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.gap-4 { gap: 1rem; }
+.md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.w-full { width: 100%; }
+.bg-gray-50 { background-color: #f9fafb; }
+.p-2 { padding: 0.5rem; }
+.text-left { text-align: left; }
+.border-b { border-bottom: 1px solid; }
+.px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+.py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+.rounded-full { border-radius: 9999px; }
+.text-xs { font-size: 0.75rem; }
+.bg-green-100 { background-color: #dcfce7; }
+.text-green-800 { color: #166534; }
+.bg-red-100 { background-color: #fee2e2; }
+.text-red-800 { color: #991b1b; }
+.text-gray-500 { color: #6b7280; }
+.italic { font-style: italic; }
