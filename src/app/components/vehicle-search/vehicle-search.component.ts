@@ -3,6 +3,7 @@ import { VehicleService } from '../../services/vehicle.service';
 import { Vehicle } from '../../models/vehicle.model';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 @Component({
   selector: 'app-vehicle-search',
   standalone: true,
@@ -19,6 +20,9 @@ export class VehicleSearchComponent {
   @Output() vehicleSelected = new EventEmitter<Vehicle | null>();
 
   constructor(private vehicleService: VehicleService) {}
+  onInputChange(event:any){
+    this.plateNumber = event.target.value;
+  }
 
   searchVehicle() {
     if (!this.plateNumber.trim()) return;

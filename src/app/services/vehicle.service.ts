@@ -12,6 +12,7 @@ export class VehicleService {
   constructor(private http: HttpClient) {}
 
   getVehicleDetails(plateNumber: string): Observable<any> {
+    console.log('VehicleService - getVehicleDetails called with plateNumber:', plateNumber);
     const headers = new HttpHeaders({
       'X-RapidAPI-Key': this.apiKey,
       'X-RapidAPI-Host': 'example-vehicle-api.com' // ✅ Replace with correct host
@@ -20,4 +21,3 @@ export class VehicleService {
     return this.http.get(`${this.apiUrl}/vehicle/${plateNumber}`, { headers });
   }
 }
-
