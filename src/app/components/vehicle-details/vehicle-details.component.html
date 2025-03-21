@@ -3,7 +3,7 @@
       <div class="bg-white p-4 rounded-lg shadow">
         <div class="mb-4">
           <img 
-            src="https://via.placeholder.com/400x300" 
+            src=""
             alt="{{vehicle.make}} {{vehicle.model}}"
             class="rounded-lg object-cover w-full h-64"
           />
@@ -27,7 +27,7 @@
             </div>
             <div>
               <span class="text-gray-500">Expiry:</span>
-              <p class="font-medium">{{vehicle.registrationExpiry}}</p>
+              <p class="font-medium">{{vehicle.registrationExpiry | date:'mediumDate'}}</p>
             </div>
           </div>
         </div>
@@ -70,7 +70,7 @@
           </div>
           <div>
             <h3 class="text-gray-500 text-sm">Valid Until</h3>
-            <p class="font-medium">{{vehicle.insuranceInfo.validUntil}}</p>
+            <p class="font-medium">{{vehicle.insuranceInfo.validUntil | date:'mediumDate'}}</p>
           </div>
         </div>
       </div>
@@ -88,7 +88,7 @@
           </thead>
           <tbody>
             <tr *ngFor="let violation of vehicle.violations" class="border-b">
-              <td class="p-2">{{violation.date}}</td>
+              <td class="p-2">{{violation.date | date:'mediumDate'}}</td>
               <td class="p-2">{{violation.type}}</td>
               <td class="p-2">{{violation.fine}}</td>
               <td class="p-2">

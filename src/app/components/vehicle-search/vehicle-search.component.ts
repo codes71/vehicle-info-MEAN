@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class VehicleSearchComponent {
   plateNumber: string = '';
+  vehicleFound: boolean = false;
+  err: any = null;
   searchHistory: Vehicle[] = [];
   isLoading: boolean = false;
   //@Input() vechicleSerach:string
@@ -26,19 +28,34 @@ export class VehicleSearchComponent {
 
   searchVehicle() {
     if (!this.plateNumber.trim()) return;
-
+    this.err = null
     this.isLoading = true;
-    this.vehicleService.getVehicleDetails(this.plateNumber).subscribe(vehicle => {
-      this.isLoading = false;
-      if (vehicle) {
-        this.vehicleSelected.emit(vehicle);
-        if (!this.searchHistory.some(v => v.id === vehicle.id)) {
-          this.searchHistory = [vehicle, ...this.searchHistory].slice(0, 5);
+    this.vehicleService.getVehicleDetails(this.plateNumber).subscribe(
+      vehicle => {
+          this.isLoading = false;
+          if (vehicle) {
+            this.vehicleSelected.emit(vehicle);
+            if (!this.searchHistory.some(v => v.id === vehicle.id)) {
+              this.searchHistory = [vehicle, ...this.searchHistory].slice(0, 5);
+            }
+          } else {
+            this.vehicleSelected.emit(null);
+          }
+          this.vehicleFound = true;
+        },
+        error =>{
+          console.log('error',error);
+          this.isLoading = false
+          this.err = error
+          if(error.status === 404){
+            this.err.message = 'Vehicle not found'
+          }else{
+            this.err.message = 'An error occurred while searching for the vehicle'
+          }
+
         }
-      } else {
-        this.vehicleSelected.emit(null);
-      }
-    });
+      
+      );
   }
 
   selectFromHistory(vehicle: Vehicle) {

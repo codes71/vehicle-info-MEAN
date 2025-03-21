@@ -6,18 +6,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class VehicleService {
-  private apiUrl = ''; // 
-  private apiKey = '5ded736336msha4b2f042f7c11d4p1f2560jsn7ab52b0a058a'; // 
+  private apiUrl = 'http://localhost:5000/api/vehicles'; // 
 
   constructor(private http: HttpClient) {}
 
   getVehicleDetails(plateNumber: string): Observable<any> {
-    console.log('VehicleService - getVehicleDetails called with plateNumber:', plateNumber);
-    const headers = new HttpHeaders({
-      'X-RapidAPI-Key': this.apiKey,
-      'X-RapidAPI-Host': 'example-vehicle-api.com' // ✅ Replace with correct host
-    });
-
-    return this.http.get(`${this.apiUrl}/vehicle/${plateNumber}`, { headers });
+    return this.http.get(`${this.apiUrl}/${plateNumber}`);
   }
 }

@@ -17,6 +17,7 @@
       </button>
     </div>
     <p>plate number:{{plateNumber}}</p>
+    <p class="text-red-600" *ngIf="err">{{err.message || ''}}</p>
 
   
     <div class="mt-4" *ngIf="searchHistory.length > 0">
